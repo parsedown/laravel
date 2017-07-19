@@ -19,17 +19,21 @@ A [Laravel](https://github.com/laravel/laravel) wrapper of **Parsedown** to exte
 composer require "parsedown/laravel"
 ```
 
-So you just need to add the service provider to your `config/app.php`:
+### Configuration
+
+If you're using **Laravel** +5.5 you don't need to follow the steps below. The [auto-discovery](https://laravel-news.com/package-auto-discovery) feature has been implemented and will take care of loading the service provider for you.
+
+But if that's not your case you just need to add the service provider to your `config/app.php`:
 ``` php
 return [
     // Other configurations above...
-    
+
     'providers' => [
         // Other providers above...
         Parsedown\Providers\ParsedownServiceProvider::class,
         // Other providers below...
     ],
-    
+
     // Other configurations below...
 ];
 ```
@@ -46,10 +50,10 @@ or (using a helper approach)
 {{ parsedown('Hello _Parsedown_!') }}
 ```
 
-Any of the code above will generate:
+Any of the codes above will generate:
 
 ``` html
 <p>Hello <em>Parsedown</em>!</p>
 ```
 
-The helper can be used with PHP throughout the project.
+The helper can be used with **PHP** throughout the project.
