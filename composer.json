@@ -1,32 +1,35 @@
 {
-  "name": "parsedown/laravel",
-  "description": "Official Laravel Wrapper of Parsedown.",
-  "keywords": ["parsedown", "laravel"],
-  "license": "MIT",
-  "homepage": "http://parsedown.org",
-  "support": {
-    "issues": "https://github.com/parsedown/laravel/issues",
-    "source": "https://github.com/parsedown/laravel"
-  },
-  "authors": [
-    {
-      "name": "Eduardo Agostini",
-      "email": "edu.agostini@gmail.com"
-    }
-  ],
-  "require": {
-    "php": ">=5.6.4",
-    "laravel/framework": ">=5.0.0",
-    "erusev/parsedown": "~1.6"
-  },
-  "autoload": {
-    "files": [
-      "src/Support/helpers.php"
+    "name": "parsedown/laravel",
+    "description": "Official Laravel Wrapper of Parsedown.",
+    "keywords": [
+        "parsedown",
+        "laravel"
     ],
-    "psr-4": {
-      "Parsedown\\": "src/"
-    }
-  },
-  "minimum-stability": "dev",
-  "prefer-stable": true
+    "license": "MIT",
+    "homepage": "http://parsedown.org",
+    "support": {
+        "issues": "https://github.com/parsedown/laravel/issues",
+        "source": "https://github.com/parsedown/laravel"
+    },
+    "authors": [
+        {
+            "name": "Eduardo Agostini",
+            "email": "edu.agostini@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.6.4",
+        "laravel/framework": ">=5.0.0",
+        "erusev/parsedown": "~1.6"
+    },
+    "autoload": {
+        "files": [
+            "src/Support/helpers.php"
+        ],
+        "psr-4": {
+            "Parsedown\\": "src/"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
