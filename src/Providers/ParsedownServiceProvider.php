@@ -2,7 +2,7 @@
 
 namespace Parsedown\Providers;
 
-use Blade;
+use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
 use Parsedown;
 

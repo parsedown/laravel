@@ -30,6 +30,11 @@
             "Parsedown\\": "src/"
         }
     },
+    "scripts": {
+        "post-update-cmd": [
+            "php artisan cache:clear"
+        ]
+    },
     "minimum-stability": "dev",
     "prefer-stable": true,
     "extra": {

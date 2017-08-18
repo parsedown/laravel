@@ -8,12 +8,12 @@ A [Laravel](https://github.com/laravel/laravel) wrapper of **Parsedown** to exte
 
 ### Features
 
-* Blade directive
-* Helper function
+* Blade Directive
+* Helper Function
 
 ### Installation
 
-**Parsedown for Laravel** is available as [a composer package](https://packagist.org/packages/parsedown/laravel). You can install it using the following command:
+**Parsedown for Laravel** is available as [a composer package](https://packagist.org/packages/parsedown/laravel). You can install it using the command below:
 
 ``` bash
 composer require "parsedown/laravel"
@@ -21,7 +21,7 @@ composer require "parsedown/laravel"
 
 ### Configuration
 
-If you're using **Laravel** +5.5 you don't need to follow the steps below. The [auto-discovery](https://laravel-news.com/package-auto-discovery) feature has been implemented and will take care of loading the service provider for you.
+If you're using **Laravel** +5.5 you don't need to follow the steps below. The [package auto-discovery](https://laravel-news.com/package-auto-discovery) feature has been implemented and will take care of loading the service provider for you.
 
 But if that's not your case you just need to add the service provider to your `config/app.php`:
 ``` php
@@ -56,4 +56,24 @@ Any of the codes above will generate:
 <p>Hello <em>Parsedown</em>!</p>
 ```
 
-The helper can be used with **PHP** throughout the project.
+The helper can also be used with **PHP** throughout the project.
+
+## Lumen Support
+
+As *Laravel* and *Lumen* share pretty much the same core instructions below should be enough to set this package in *Lumen*.
+
+### Enable Facades in Your Project
+
+In your `bootstrap/app.php` ensure you have the following:
+
+```php
+$app->withFacades();
+```
+
+### Service Provider Registering
+
+As **Lumen** does not support package auto-discovery you got to do it manually adding the code below in your `bootstrap/app.php`:
+
+```php
+$app->register(Parsedown\Providers\ParsedownServiceProvider::class);
+```
