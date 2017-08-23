@@ -2,8 +2,8 @@
 
 namespace Parsedown\Providers;
 
-use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\View\Compilers\BladeCompiler;
 use Parsedown;
 
 /**
@@ -17,12 +17,26 @@ class ParsedownServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        Blade::directive('parsedown', function ($expression) {
+        $this->compiler()->directive('parsedown', function ($expression) {
             return "<?php echo parsedown($expression); ?>";
         });
+    }
 
-        $this->app->singleton(Parsedown::class, function () {
-            return new Parsedown();
+    /**
+     * @return BladeCompiler
+     */
+    protected function compiler()
+    {
+        return app('view')->getEngineResolver()->resolve('blade')->getCompiler();
+    }
+
+    /**
+     * @return void
+     */
+    public function register()
+    {
+        $this->app->singleton('parsedown', function () {
+            return Parsedown::instance();
         });
     }
 }
