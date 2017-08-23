@@ -60,7 +60,7 @@ The helper can also be used with **PHP** throughout the project.
 
 ## Lumen Support
 
-As *Laravel* and *Lumen* share pretty much the same core instructions below should be enough to set this package in *Lumen*.
+As **Laravel** and **Lumen** share pretty much the same core the instructions below should be enough to set this package in yout **Lumen** project.
 
 ### Enable Facades in Your Project
 
