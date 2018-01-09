@@ -9,7 +9,7 @@ function parsedown($text)
     /**
      * @var Parsedown $parser
      */
-    $parser = resolve('parsedown');
+    $parser = app('parsedown');
 
     return $parser->text($text);
 }
