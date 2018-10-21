@@ -36,7 +36,9 @@ class ParsedownServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->singleton('parsedown', function () {
-            return Parsedown::instance();
+            $parsedown = new Parsedown;
+            $parsedown->setSafeMode(true);
+            return $parsedown;
         });
     }
 }
