@@ -9,7 +9,7 @@ return [
     'breaks_enabled' => false,
 
     /**
-     *  Tells the `parsedown()` helper and the `@parsedown` **Blade** directive if the user input should be inline parsed.
+     *  Tells the `parsedown()` helper and the `@parsedown` **Blade** directive if the user input should be inline parsed by default.
      *
      * @see https://github.com/erusev/parsedown/wiki/Usage
      */
