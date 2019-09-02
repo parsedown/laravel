@@ -2,6 +2,7 @@
 
 namespace Tests;
 
+use Illuminate\Foundation\Application;
 use Illuminate\View\Compilers\BladeCompiler;
 use Parsedown\Providers\ParsedownServiceProvider;
 
@@ -34,7 +35,7 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
     }
 
     /**
-     * @param \Illuminate\Foundation\Application $app
+     * @param Application $app
      * @return array
      */
     protected function getPackageProviders($app)
