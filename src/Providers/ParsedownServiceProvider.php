@@ -62,6 +62,14 @@ class ParsedownServiceProvider extends ServiceProvider
                 Config::get('parswdown.urls_linked')
             );
 
+            $parsedown->setDisabledBlockTypes(
+                Config::get('parsedown.disabled_block_types')
+            );
+
+            $parsedown->setDisabledInlineTypes(
+                Config::get('parsedown.disabled_inline_types')
+            );
+
             return $parsedown;
         });
 

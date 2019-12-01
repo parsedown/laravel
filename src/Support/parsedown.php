@@ -35,4 +35,18 @@ return [
      * @see https://github.com/erusev/parsedown/wiki/Usage
      */
     'urls_linked' => true,
+
+    /**
+     * Tells **Parsedown** which block types to disable.
+     *
+     * @see https://github.com/erusev/parsedown/wiki/Usage
+     */
+    'disabled_block_types' => [],
+
+    /**
+     * Tells **Parsedown** which inline types to disable.
+     *
+     * @see https://github.com/erusev/parsedown/wiki/Usage
+     */
+    'disabled_inline_types' => [],
 ];
