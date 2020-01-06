@@ -59,7 +59,7 @@ class ParsedownServiceProvider extends ServiceProvider
             );
 
             $parsedown->setUrlsLinked(
-                Config::get('parswdown.urls_linked')
+                Config::get('parsedown.urls_linked')
             );
 
             return $parsedown;
