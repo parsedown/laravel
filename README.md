@@ -52,7 +52,7 @@ This package uses the `Parsedown\Providers\ParsedownServiceProvider` service pro
 You can overwrite these values by publishing the `config/parsedown.php` file with the following command:
 
 ``` sh
-php artisan vendor:publish --provider=Parsedown\Providers\ParsedownServiceProvider
+php artisan vendor:publish --provider="Parsedown\Providers\ParsedownServiceProvider"
 ```
 
 ### Usage
