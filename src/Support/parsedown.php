@@ -35,4 +35,12 @@ return [
      * @see https://github.com/erusev/parsedown/wiki/Usage
      */
     'urls_linked' => true,
+
+    /**
+     * Tells which **Parsedown** class to use.
+     * Modify the class if you want to use an extension of **Parsedown**.
+     *
+     * @see https://github.com/erusev/parsedown/wiki/Tutorial:-Create-Extensions
+     */
+    'parsedown_class' => \Parsedown::class,
 ];
