@@ -44,7 +44,8 @@ class ParsedownServiceProvider extends ServiceProvider
     public function register(): void
     {
         $this->app->singleton('parsedown', function () {
-            $parsedown = Parsedown::instance();
+            $parsedownClass = Config::get('parsedown.parsedown_class');
+            $parsedown = new $parsedownClass;
 
             $parsedown->setBreaksEnabled(
                 Config::get('parsedown.breaks_enabled')
