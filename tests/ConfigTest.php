@@ -3,6 +3,7 @@
 namespace Tests;
 
 use Illuminate\Support\Facades\Config;
+use Parsedown;
 
 /**
  * Class ConfigTest
@@ -41,7 +42,7 @@ class ConfigTest extends TestCase
 
         $this->assertSame($expected, $actual);
     }
-    
+
     /**
      * @return void
      */
@@ -77,6 +78,20 @@ class ConfigTest extends TestCase
 
         $actual = parsedown('<span>' . $this->text . '</span>');
         $expected = '<p>' . htmlentities('<span>') . '<strong>Parsedown</strong> UnitTest' . htmlentities('</span>') . '</p>';
+
+        $this->assertSame($expected, $actual);
+    }
+
+    /**
+     * @return void
+     */
+    public function testCanUseParsedownExtension(): void
+    {
+        $extensionClass = (new class extends Parsedown {});
+        Config::set('parsedown.parsedown_class', $extensionClass);
+
+        $actual = parsedown($this->text);
+        $expected = '<strong>Parsedown</strong> UnitTest';
 
         $this->assertSame($expected, $actual);
     }
