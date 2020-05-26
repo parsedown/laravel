@@ -88,8 +88,7 @@ class ConfigTest extends TestCase
     public function testCanUseParsedownExtension(): void
     {
         $extensionClass = (
-        new class extends Parsedown
-        {
+        new class extends Parsedown {
             // Custom class
         }
         );
