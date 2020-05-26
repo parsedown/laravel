@@ -48,6 +48,7 @@ This package uses the `Parsedown\Providers\ParsedownServiceProvider` service pro
 | `markup_escaped` | Escapes **HTML** in trusted input. Redundant if `safe_mode` is enabled.                        | `false` |
 | `safe_mode`      | Doesn't process untrusted user-input.                                                          | `true`  |
 | `urls_linked`    | Automatically converts **URL**s into anchor tags.                                              | `true`  |
+| `parsedown_class`| Specify your own class for extensions which is extended by Parsedown                           | `\Parsedown::class`  |
 
 You can overwrite these values by publishing the `config/parsedown.php` file with the following command:
 
