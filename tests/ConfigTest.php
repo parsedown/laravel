@@ -88,10 +88,10 @@ class ConfigTest extends TestCase
     public function testCanUseParsedownExtension(): void
     {
         $extensionClass = (
-            new Class extends Parsedown
-            {
-                // Custom class
-            }
+        new class extends Parsedown
+        {
+            // Custom class
+        }
         );
         Config::set('parsedown.parsedown_class', $extensionClass);
 
