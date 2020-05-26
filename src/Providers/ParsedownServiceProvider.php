@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Config;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\View\Compilers\BladeCompiler;
 use Parsedown;
+use UnexpectedValueException;
 
 /**
  * Class ParsedownServiceProvider
@@ -46,6 +47,10 @@ class ParsedownServiceProvider extends ServiceProvider
         $this->app->singleton('parsedown', function () {
             $parsedownClass = Config::get('parsedown.parsedown_class');
             $parsedown = new $parsedownClass;
+            
+            if (!is_a($parsedown, Parsedown::class, true)) {
+                throw new UnexpectedValueException($parsedownClass . ' does not extend the Parsedown class');
+            }
 
             $parsedown->setBreaksEnabled(
                 Config::get('parsedown.breaks_enabled')
